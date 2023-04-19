@@ -19,7 +19,7 @@ const Movies = () => {
       return setSearchParams({});
     }
     setSearchParams({ query: evt.target[0].value });
-    evt.target[0].value = '';
+
   };
 
   useEffect(() => {
