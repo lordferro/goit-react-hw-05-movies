@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
-  const inputValue = document.querySelector
   const [movies, setMovies] = useState([]);
 
   const location = useLocation();
