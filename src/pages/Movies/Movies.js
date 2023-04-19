@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
+  const inputValue = document.querySelector
   const [movies, setMovies] = useState([]);
 
   const location = useLocation();
@@ -15,6 +16,7 @@ const Movies = () => {
   const updateQueryString = evt => {
     evt.preventDefault();
     if (evt.target[0].value === '') {
+      alert('please enter your query ');
       return setSearchParams({});
     }
     setSearchParams({ query: evt.target[0].value });
@@ -28,6 +30,9 @@ const Movies = () => {
     const fetchMoviesByQuery = async () => {
       try {
         const response = await axios.get(getMoviesByQueryUrl(queryString));
+        if (response.data.results.length === 0) {
+          alert('Please check your query, beacause we find nothing');
+        }
         setMovies(response.data.results);
       } catch (error) {
         console.log(error);
