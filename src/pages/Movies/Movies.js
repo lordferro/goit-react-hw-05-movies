@@ -43,7 +43,7 @@ const Movies = () => {
   return (
     <>
       <form onSubmit={updateQueryString}>
-        <input type="text" defaultValue="" />
+        <input type="text" defaultValue={queryString} />
         <button type="submit">Search</button>
       </form>
       <MoviesList state={{ movies, from: location }} />
